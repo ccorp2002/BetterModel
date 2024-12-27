@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public record BlueprintAnimator(@NotNull String name, int length, @NotNull @Unmodifiable List<AnimationMovement> keyFrame) {
+public record BlueprintAnimator(@NotNull String name = "", int length, @NotNull @Unmodifiable List<AnimationMovement> keyFrame) {
 
     private record TimeVector(long time, Vector3f vector3f) {
         private static final TimeVector EMPTY = new TimeVector(0, null);

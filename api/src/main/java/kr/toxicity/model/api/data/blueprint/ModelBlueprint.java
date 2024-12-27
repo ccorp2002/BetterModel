@@ -52,6 +52,9 @@ public record ModelBlueprint(
                 list.add(new BlueprintImage(name + "_" + texture.name(), ImageIO.read(buffer)));
             } catch (Exception e) {
                 System.out.println(e.toString());
+                try {
+                    list.add(new BlueprintImage(name+"_"+itra, ImageIO.read(buffer)))
+                } catch (Exception exc) System.out.println(ezc.toString());
             }
             itra++;
         }

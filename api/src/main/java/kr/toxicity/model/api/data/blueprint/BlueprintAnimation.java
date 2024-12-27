@@ -11,7 +11,7 @@ import org.joml.Vector3f;
 import java.util.*;
 
 public record BlueprintAnimation(
-        @NotNull String name,
+        @NotNull String name = "idle",
         int length,
         @NotNull @Unmodifiable Map<String, BlueprintAnimator> animator,
         List<AnimationMovement> emptyAnimator
