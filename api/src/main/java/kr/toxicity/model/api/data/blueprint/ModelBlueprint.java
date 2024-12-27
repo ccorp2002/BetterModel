@@ -42,15 +42,18 @@ public record ModelBlueprint(
 
     public @NotNull List<BlueprintImage> buildImage() {
         var list = new ArrayList<BlueprintImage>();
+        int itra = 0;
         for (BlueprintTexture texture : textures) {
+            System.out.println("Texture Indx", itra)
             try (
                     var source = new ByteArrayInputStream(texture.image());
                     var buffer = new BufferedInputStream(source)
             ) {
                 list.add(new BlueprintImage(name + "_" + texture.name(), ImageIO.read(buffer)));
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                System.out.println(e.toString());
             }
+            itra++;
         }
         return list;
     }
